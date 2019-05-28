@@ -6,16 +6,16 @@ image_config: &image_config
 
   IMAGE_NAME: cohub-core
 
-  IMAGE_TAG: ruby2.5.0-node8.9.4
+  IMAGE_TAG: ruby2.5.5-node8.9.4
 
   # NOTE: if you're modifying this config.yml file manually
   # rather than using the included setup script,
   # make sure you also add the values of your IMAGE_NAME & IMAGE_TAG variables
   # to the `test_image` job (line 55)
 
-  LINUX_VERSION: UBUNTU_TRUSTY
+  LINUX_VERSION: UBUNTU_XENIAL
 
-  RUBY_VERSION_NUM: 2.5.0
+  RUBY_VERSION_NUM: 2.5.5
 
   NODE_VERSION_NUM: 8.9.4
 
@@ -54,7 +54,7 @@ jobs:
 
   test_image:
     docker:
-      - image: $DOCKER_USERNAME/cohub-core:ruby2.5.0-node8.9.4
+      - image: $DOCKER_USERNAME/cohub-core:ruby2.5.5-node8.9.4
         environment:
           <<: *image_config
 
